@@ -6,6 +6,8 @@ import Link from 'next/link'
 const name = 'Name'
 export const siteTitle = 'Next.js Sample Website'
 
+console.log(process.env.NEXT_PUBLIC_MY_NAME)
+
 export default function Layout({ children, home }) {
   return (
     <div className={styles.container}>
@@ -30,9 +32,9 @@ export default function Layout({ children, home }) {
             <img
               src="/images/profile.png"
               className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`}
-              alt={name}
+              alt={process.env.NEXT_PUBLIC_MY_NAME}
             />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
+            <h1 className={utilStyles.heading2Xl}>{process.env.NEXT_PUBLIC_MY_NAME}</h1>
           </>
         ) : (
           <>
@@ -41,13 +43,13 @@ export default function Layout({ children, home }) {
                 <img
                   src="/images/profile.png"
                   className={`${styles.headerImage} ${utilStyles.borderCircle}`}
-                  alt={name}
+                  alt={process.env.NEXT_PUBLIC_MY_NAME}
                 />
               </a>
             </Link>
             <h2 className={utilStyles.headingLg}>
               <Link href="/">
-                <a className={utilStyles.colorInherit}>{name}</a>
+                <a className={utilStyles.colorInherit}>{process.env.NEXT_PUBLIC_MY_NAME}</a>
               </Link>
             </h2>
           </>
